@@ -1,0 +1,51 @@
+
+:root {
+    /* colors */
+    --color-primary: #388087;
+    --color-secondary: #6fb3b8;
+    --color-secondary-light: #badfe7;
+    --color-light: #f6f2f2;
+    --color-dark: #333;
+    --txt-light: #f8f9ff;
+    --bg-dark: #222;
+    --bg-light: #f8f9ff;
+    --color-success: #25df72;
+    --color-danger: #dc2626;
+    --color-grey: rgb(138, 130, 130);
+    --color-warning: #82be10;
+  
+    /* alerts */
+    --alert-text-color: #a1a1a1;
+    --alert-danger-light: #ffe0e3;
+    --alert-success-light: #b4e0c6;
+    --alert-warning-light: #d8e7b5;
+    --alert-dark: #4d4d4d;
+  
+    --container-width: 90%;
+    --card-bodrder-color: rgba(0, 0, 0, 0.125);
+    --xs: 480px;
+    --sm: 640px;
+    --md: 768px;
+    --lg: 1024px;
+    --xl: 1280px;
+    --2xl: 1536px;
+    /* Typography */
+    --font-light: 300;
+    --font-regular: 400;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-black: 900;
+    /* border-radius */
+    --border-s: 5px;
+    --border-m: 10px;
+    --border-l: 15px;
+    --border-circle: 999px;
+  
+    /* spacing */
+    --s05: 0.5rem;
+    --s1: 1rem;
+    --s2: 2rem;
+    --s3: 3rem;
+    --s4: 4rem;
+    --s5: 5rem;
+  }
