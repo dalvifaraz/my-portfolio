@@ -1,3 +1,43 @@
-.navbar, .nav{
-    background-color: violet;
+.navbar-container{
+    background-color: var(--bg-color-navbar);
 }
+.navbar-button-container{
+    border-radius: 0.3rem;
+    background-color: var(--bg-color-navbtn);
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 10rem;
+    text-align: center;
+}
+
+.navbar-button-container:hover{
+    transition: none !important;
+    border:2px solid var( --bg-color-navbtn-hover-border);
+    background-color: var(--bg-color-navbtn-hover);
+}
+.navbar-button{
+    text-decoration: none !important;
+}       
+
+@media only screen and (max-width: 540px) {
+    .link-container {
+      display: none !important;
+    }
+    .link-container-btn {
+        display: flex !important;
+      }
+  }
+  @media only screen and (min-width: 540px) {
+    .link-container-btn {
+      display: none !important;
+    }
+    .link-container {
+        display: flex !important;
+      }
+  }
+
+  @media only screen and (min-width: 350) {
+    .navbar-container{
+      height: 20vh !important ;
+    }
+  }

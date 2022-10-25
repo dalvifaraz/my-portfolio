@@ -11,8 +11,13 @@
     --bg-light: #f8f9ff;
     --color-success: #25df72;
     --color-danger: #dc2626;
-    --color-grey: rgb(138, 130, 130);
+    --color-grey: rgb(86, 80, 80);
     --color-warning: #82be10;
+    --bg-color-navbar: rgb(58, 56, 56);
+    --bg-color-navbtn: #B2B1CF;
+    --bg-color-navbtn-hover: rgb(58, 56, 56);
+    --bg-color-navbtn-hover-border: #B2B1CF;
+    --bg-color-footer: #98D2EB;
   
     /* alerts */
     --alert-text-color: #a1a1a1;
