@@ -1,21 +1,31 @@
-import { Box, Grid, styled, Typography } from "@mui/material";
-import React from "react";
+import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import React, { useState } from "react";
 import "../css/Footer.css";
 import IconsComponent from "./Icons";
-import Paper from "@mui/material/Paper";
+import SendIcon from '@mui/icons-material/Send';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
 
 const Footer = () => {
+  const [newsLetterMail, setNewsLetterMail] = useState("");
+  const [newsLetterMailError, setNewsLetterMailError] = useState("");
+
+  const handleChange = (event) => {
+    let value = event.target.value;
+    if (value === "") setNewsLetterMailError(false);
+    else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value))
+      setNewsLetterMailError(true);
+    else setNewsLetterMailError(false);
+
+    setNewsLetterMail(value);
+  };
+
+  const handleNewsLetterClick =() => {
+    setNewsLetterMail('');
+  }
+
   return (
     <React.Fragment>
-      <Box className="footer-container" color="black" height={"30vh"}>
+      <Box className="footer-container" color="black">
         <Grid container>
           <Grid item xs={12} px={1}>
             <Box
@@ -32,24 +42,58 @@ const Footer = () => {
           </Grid>
           <Grid container spacing={2} p={2}>
             <Grid item xs={12} sm={12} md={6}>
-              <Item>xs=8</Item>
+              <Typography fontSize={32} color="white" fontFamily="Arial-Black">
+                NEWSLETTER <br /> SIGNUP
+              </Typography>
+              <Typography
+                fontSize={14}
+                color="white"
+                fontFamily="Arial"
+                fontWeight="bold"
+              >
+                subscribe to my channel for latest update ??
+              </Typography>
+              <Grid item pt={2}>
+                <TextField
+                  required
+                  label="Enter Email Address"
+                  type="email"
+                  inputProps={{
+                    style: {
+                      fontSize: 16,
+                      height: 40,
+                      padding: "0 14px",
+                      fontWeight: "normal",
+                    },
+                  }}
+                  value={newsLetterMail}
+                  onChange={handleChange}
+                  error={newsLetterMailError === true}
+                  helperText={
+                    newsLetterMailError === true ? "Enter a valid email!" : ""
+                  }
+                />
+                <Button variant="contained" style={{height: 37, padding: '0 14px', marginLeft: 8  }}  disabled={newsLetterMailError === true || newsLetterMail === ""} onClick={handleNewsLetterClick} endIcon={<SendIcon />}>
+                  Subscribe
+                </Button>
+              </Grid>
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
-              <Item>xs=8</Item>
+              DALVI
             </Grid>
           </Grid>
-          <Grid container className="copy-right" xs={12}>
-          <Typography
-            variant="overline"
-            fontSize={12}
-            color="text.secondary"
-            className="copy-right" 
-          >
-            {"© "}
-            {new Date().getFullYear()}
-            {" Dalvi Faraz. "}
-            {"All rights reserved."}
-          </Typography>
+          <Grid container className="copy-right">
+            <Typography
+              variant="overline"
+              fontSize={12}
+              color="GrayText"
+              className="copy-right"
+            >
+              {"© "}
+              {new Date().getFullYear()}
+              {" Dalvi Faraz. "}
+              {"All rights reserved."}
+            </Typography>
           </Grid>
         </Grid>
       </Box>

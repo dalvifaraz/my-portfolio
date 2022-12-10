@@ -4,7 +4,6 @@
 .navbar-button-container{
     border-radius: 0.3rem;
     background-color: var(--bg-color-navbtn);
-    padding: 1rem;
     margin: 0.5rem;
     width: 10rem;
     text-align: center;

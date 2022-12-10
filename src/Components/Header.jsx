@@ -1,7 +1,8 @@
 import React from "react";
 import "../css/Header.css";
+import Footer from "./Footer";
 const Header = () => {
-  return (
+  return (<>
     <div className="header">
     Header
       {/* <header className="header1">
@@ -11,6 +12,8 @@ const Header = () => {
         <div class="main_box">Rectangular Box 2</div>
       </header> */}
     </div>
+    <Footer/>
+    </>
   );
 };
 
