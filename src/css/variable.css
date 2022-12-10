@@ -1,8 +1,8 @@
 
 :root {
     /* colors */
-    --color-primary: #388087;
-    --color-secondary: #6fb3b8;
+    --color-primary: #98D2EB;
+    --color-secondary: #1975d1;
     --color-secondary-light: #badfe7;
     --color-light: #f6f2f2;
     --color-dark: #333;
@@ -13,6 +13,7 @@
     --color-danger: #dc2626;
     --color-grey: rgb(86, 80, 80);
     --color-warning: #82be10;
+
     --bg-color-navbar: rgb(58, 56, 56);
     --bg-color-navbtn: #B2B1CF;
     --bg-color-navbtn-hover: rgb(58, 56, 56);

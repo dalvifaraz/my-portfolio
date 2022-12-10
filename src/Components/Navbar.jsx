@@ -6,7 +6,7 @@ import {
   ThemeProvider,
   Typography,
 } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/Navbar.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink, Outlet } from 'react-router-dom';
@@ -14,7 +14,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 const theme = createTheme({
   typography: {
     navbarTitle: {
-      color: 'white',
+      color: '#1975d1',
       fontSize: '4rem',
       fontWeight: 500,
       fontStyle: 'bold',
@@ -24,18 +24,15 @@ const theme = createTheme({
     },
     navbarLink: {
       fontSize: 20,
-      color: 'black',
-      '&:hover': {
-        color: 'white',
-      },
     },
   },
 });
 
 const Navbar = () => {
+  const [isActive, setIsActive] = useState('');
   return (
     <React.Fragment>
-      <Box className='navbar-container' color='black' height={'7vh'} pt>
+      <Box className='navbar-container' color='black' pt>
         <Container maxWidth='xl'>
           <Grid container>
             <Grid item xs={12}>
@@ -43,10 +40,15 @@ const Navbar = () => {
                 display='flex'
                 flexDirection='row'
                 justifyContent='space-between'
+                paddingY={1}
               >
                 <NavLink to=''>
                   <ThemeProvider theme={theme}>
-                    <Typography variant='navbarTitle' fontFamily='Arial-Black'>
+                    <Typography
+                      variant='navbarTitle'
+                      fontFamily='Arial-Black'
+                      onClick={() => setIsActive('')}
+                    >
                       Dalvi Faraz
                     </Typography>
                   </ThemeProvider>
@@ -58,42 +60,54 @@ const Navbar = () => {
                   justifyContent='space-between'
                   alignItems='center'
                 >
-                  {/* <NavLink>
-                    <Box className='navbar-button-container' py={1}>
-                      <Link className='navbar-button'>
-                        <ThemeProvider theme={theme}>
-                          <Typography variant='navbarLink'>Project</Typography>
-                        </ThemeProvider>
-                      </Link>
-                    </Box>
-                  </NavLink>
-                  <Box className='navbar-button-container' py={1}>
-                    <Link href='#' className='navbar-button'>
-                      <ThemeProvider theme={theme}>
-                        <Typography variant='navbarLink'>Blog</Typography>
-                      </ThemeProvider>
-                    </Link>
-                  </Box> */}
-
-                  <NavLink to='projects'>
+                  <NavLink
+                    to='projects'
+                    onClick={() => setIsActive('projects')}
+                  >
                     <Box className='navbar-button-container' py={1}>
                       <ThemeProvider theme={theme}>
-                        <Typography variant='navbarLink'>Projects</Typography>
+                        <Typography
+                          variant='navbarLink'
+                          sx={
+                            isActive === 'projects' && {
+                              textDecoration: 'underline',
+                            }
+                          }
+                        >
+                          Projects
+                        </Typography>
                       </ThemeProvider>
                     </Box>
                   </NavLink>
-                  <NavLink to='blogs'>
+                  <NavLink to='blogs' onClick={() => setIsActive('blogs')}>
                     <Box className='navbar-button-container' py={1}>
                       <ThemeProvider theme={theme}>
-                        <Typography variant='navbarLink'>Blogs</Typography>
+                        <Typography
+                          variant='navbarLink'
+                          sx={
+                            isActive === 'blogs' && {
+                              textDecoration: 'underline',
+                            }
+                          }
+                        >
+                          Blogs
+                        </Typography>
                       </ThemeProvider>
                     </Box>
                   </NavLink>
-                  <NavLink to='haamid'>
+                  <NavLink to='haamid' onClick={() => setIsActive('design')}>
                     <Box className='navbar-button-container' py={1}>
                       <ThemeProvider theme={theme}>
-                        <Typography variant='navbarLink'>HAAMID</Typography>
-                        {/* <Typography variant='navbarLink'>Design</Typography> */}
+                        <Typography
+                          variant='navbarLink'
+                          sx={
+                            isActive === 'design' && {
+                              textDecoration: 'underline',
+                            }
+                          }
+                        >
+                          Design
+                        </Typography>
                       </ThemeProvider>
                     </Box>
                   </NavLink>
