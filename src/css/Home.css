@@ -1,4 +1,4 @@
 .home{
-    background-color: rgb(150, 158, 47);
+    background-color: var(--color-secondary);
     height: 100vh;
 }
